@@ -19,6 +19,7 @@ Run the provider server  `http://localhost:8081`  (Client API/Service):
 
 ```
 git clone https://github.com/pact-foundation/pact_broker.git
+cd pact_broker/example
 sudo bundle install
 ```
 
@@ -40,11 +41,37 @@ cd consumer-driven-testing
 npm install
 ```
 
-- Run the consumer contract tests and generate the contracts:
-`npm run test:consumer`
 
+### Running consumer test and generate contracts
+- Run the Web App consumer contract tests and generate the contracts:
+```
+npm run test:consumerWeb
+```
+- Run the Native App consumer contract tests and generate the contracts:
+```
+npm run test:consumerNative
+```
+- Run the Admin Portal consumer contract tests and generate the contracts:
+```
+npm run test:consumerAdmin
+```
+
+### Publishing all contracts
 - Publish the contracts:
-`npm run publish:contract`
+```
+npm run publish:contract
+```
 
-- Run the provider contract tests to verify the contracts:
-`npm run test:provider`
+### Running provider verification against contract
+- to verify web contracts:
+```
+npm run test:providerWeb
+```
+- to verify admin contracts:
+```
+npm run test:providerAdmin
+```
+- to verify native contracts:
+```
+npm run test:providerNative
+```

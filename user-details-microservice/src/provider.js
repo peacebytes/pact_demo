@@ -30,6 +30,8 @@ const importData = () => {
 
 // Get all users
 server.get("/users", (req, res) => {
+  userRepository.clear(); // This is a trick for deming the same response for get all users
+  importData()
   res.json(userRepository.fetchAll())
 })
 
