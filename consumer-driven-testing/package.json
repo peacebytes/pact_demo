@@ -4,9 +4,13 @@
   "description": "A simple Nodejs + jest project configuring contract tests with PactJS",
   "main": "src/index.js",
   "scripts": {
-    "test:consumer": "jest __tests__/contract/consumer --runInBand --setupFiles ./__tests__/contract/helpers/pactSetup.js --setupTestFrameworkScriptFile=./__tests__/contract/helpers/pactTestWrapper.js",
-    "test:provider": "jest __tests__/contract/provider --runInBand --force-exit",
-    "publish:contract": "node __tests__/contract/helpers/publish.js"
+    "test:consumerWeb": "jest __tests__/contract/consumer/web --runInBand --setupFiles ./__tests__/contract/helpers/pactSetupWeb.js --setupTestFrameworkScriptFile=./__tests__/contract/helpers/pactTestWrapper.js",
+    "test:consumerNative": "jest __tests__/contract/consumer/native --runInBand --setupFiles ./__tests__/contract/helpers/pactSetupNative.js --setupTestFrameworkScriptFile=./__tests__/contract/helpers/pactTestWrapper.js",
+    "test:consumerAdmin": "jest __tests__/contract/consumer/admin --runInBand --setupFiles ./__tests__/contract/helpers/pactSetupAdmin.js --setupTestFrameworkScriptFile=./__tests__/contract/helpers/pactTestWrapper.js",
+    "test:providerWeb": "jest __tests__/contract/provider/web --runInBand --force-exit",
+    "test:providerNative": "jest __tests__/contract/provider/native --runInBand --force-exit",
+    "test:providerAdmin": "jest __tests__/contract/provider/admin --runInBand --force-exit",
+    "publish:contract": "node __tests__/contract/helpers/publishWeb.js && node __tests__/contract/helpers/publishAdmin.js && node __tests__/contract/helpers/publishNative.js"
   },
   "repository": {
     "type": "git",

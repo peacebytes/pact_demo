@@ -1,0 +1,81 @@
+{
+  "consumer": {
+    "name": "NativeApp"
+  },
+  "provider": {
+    "name": "UserDetailsMicroService"
+  },
+  "interactions": [
+    {
+      "description": "a request for all users",
+      "providerState": "I have a list of users",
+      "request": {
+        "method": "GET",
+        "path": "/users",
+        "headers": {
+          "Accept": "application/json, text/plain, */*"
+        }
+      },
+      "response": {
+        "status": 200,
+        "headers": {
+          "Content-Type": "application/json; charset=utf-8"
+        },
+        "body": [
+          {
+            "username": "Lisa",
+            "credit_balance": 344,
+            "last_online_date": "2021-12-09",
+            "member_since": "2020-10-22",
+            "id": 1
+          },
+          {
+            "username": "Liam",
+            "credit_balance": 988,
+            "last_online_date": "2021-02-15",
+            "member_since": "2018-05-24",
+            "id": 2
+          },
+          {
+            "username": "Lily",
+            "credit_balance": 566,
+            "last_online_date": "2021-03-13",
+            "member_since": "2019-04-08",
+            "id": 3
+          }
+        ]
+      }
+    },
+    {
+      "description": "a request to create user with username",
+      "providerState": "I create a new user",
+      "request": {
+        "method": "POST",
+        "path": "/users",
+        "headers": {
+          "Content-Type": "application/json;charset=utf-8"
+        },
+        "body": {
+          "username": "Lynn",
+          "credit_balance": 666,
+          "last_online_date": "2022-10-04",
+          "member_since": "2022-10-04"
+        }
+      },
+      "response": {
+        "status": 200,
+        "headers": {
+        },
+        "body": {
+          "username": "Lynn",
+          "member_since": "2022-10-04"
+        }
+      }
+    }
+  ],
+  "metadata": {
+    "pactSpecification": {
+      "version": "2.0.0"
+    }
+  }
+}

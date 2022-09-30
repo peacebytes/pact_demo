@@ -12,7 +12,7 @@ const SERVER_URL = "http://localhost:8081"
                 providerVersionTags: ["dev"],
                 publishVerificationResult: true,
                 provider: "UserDetailsMicroService",
-                providerVersion: "2022.11.dev.build.13"
+                providerVersion: "2022.11.dev.build.14"
               }
             return new Verifier(opts).verifyProvider().then(output => {
                 console.log("Pact Verification Complete!")

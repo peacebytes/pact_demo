@@ -1,7 +1,7 @@
 "use strict"
 
 const { Matchers } = require("@pact-foundation/pact")
-const { getUsers, postUser } = require("../lib/simulatedWebConsumer")
+const { getUsers, postUser } = require("../../lib/simulatedWebConsumer")
 
 describe("User Details Service", () => {
     const GET_EXPECTED_BODY = [
@@ -26,7 +26,7 @@ describe("User Details Service", () => {
             "member_since": "2019-04-08",
             "id": 3
         }
-                              ]
+    ]
     
     afterEach(() => provider.verify())
 
@@ -47,7 +47,7 @@ describe("User Details Service", () => {
                     headers: {
                         "Content-Type": "application/json; charset=utf-8",
                     },
-                    body: GET_EXPECTED_BODY,
+                    body: Matchers.like(GET_EXPECTED_BODY).contents
                 }
             }
             return provider.addInteraction(interaction)
@@ -69,8 +69,6 @@ describe("User Details Service", () => {
 
     const POST_EXPECTED_BODY = {
         username: POST_BODY.username,
-        credit_balance: POST_BODY.credit_balance,
-        last_online_date: POST_BODY.last_online_date,
         member_since: POST_BODY.member_since,
     }
 
