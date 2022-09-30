@@ -1,0 +1,23 @@
+[
+    {
+        "username": "Lisa",
+        "credit_balance": 344,
+        "last_online_date": "2021-12-09",
+        "member_since": "2020-10-22",
+        "id": 1
+    },
+    {
+        "username": "Liam",
+        "credit_balance": 988,
+        "last_online_date": "2021-02-15",
+        "member_since": "2018-05-24",
+        "id": 2
+    },
+    {
+        "username": "Lily",
+        "credit_balance": 566,
+        "last_online_date": "2021-03-13",
+        "member_since": "2019-04-08",
+        "id": 3
+    }
+]
