@@ -63,15 +63,21 @@ npm run publish:contract
 ```
 
 ### Running provider verification against contract
-- to verify web contracts:
+- Set up User Details Microservice:
+```
+cd pact_demo
+cd user-details-microservice
+npm install
+```
+- To verify web app contracts
 ```
 npm run test:providerWeb
 ```
-- to verify admin contracts:
+- To verify admin portal contracts:
 ```
 npm run test:providerAdmin
 ```
-- to verify native contracts:
+- To verify native app contracts:
 ```
 npm run test:providerNative
 ```
