@@ -1,6 +1,6 @@
-### pact_demo
+# pact_demo
 
-## Start users-details-micro-service on local
+## 1. Start users-details-micro-service on local
 
 Open your terminal on your project's folder
 
@@ -12,7 +12,7 @@ npm run provider
 ```
 Run the provider server  `http://localhost:8081`  (Client API/Service):
 
-## Install pact broker on local
+## 2. Install pact broker on local
 
 ​See ​https://github.com/pact-foundation/pact_broker/tree/master/example
 
@@ -31,8 +31,9 @@ RACK_ENV=production bundle exec puma
 By default pact broker will be available at  http://localhost:9292
 
 
-## Running pact consumer-driven-testing
+## 3. Running pact consumer-driven-testing
 
+#### 3.1 Set up consumer-driven-testing
 - Open your terminal on your project's folder
 
 ```
@@ -42,7 +43,7 @@ npm install
 ```
 
 
-### Running consumer test and generate contracts
+#### 3.2 Running consumer test and generate contracts
 - Run the Web App consumer contract tests and generate the contracts:
 ```
 npm run test:consumerWeb
@@ -56,17 +57,17 @@ npm run test:consumerNative
 npm run test:consumerAdmin
 ```
 
-### Publishing all contracts
+#### 3.3 Publishing all contracts
 - Publish the contracts:
 ```
 npm run publish:contract
 ```
 
-### Running provider verification against contract
-- Set up User Details Microservice:
+#### 3.4 Running provider verification against contract
+- Set up consumer-driven-testing if haven't done at step 3.1
 ```
 cd pact_demo
-cd user-details-microservice
+cd consumer-driven-testing
 npm install
 ```
 - To verify web app contracts
